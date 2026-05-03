@@ -54,3 +54,7 @@ Symlink helper (respects **`PREFIX`** env):
 ```bash
 ./install.sh
 ```
+
+## Acknowledgements
+
+Thank you to [**Happy Hacking Space**](https://github.com/HappyHackingSpace) for [**`vt`** (Vulnerable Target)](https://github.com/HappyHackingSpace/vt) and the [**`vt-templates`**](https://github.com/HappyHackingSpace/vt-templates) ecosystem. UASF exposes optional `./uasf.sh vt …` wrappers and lab docs that integrate with upstream `vt`; the tool itself is maintained by Happy Hacking Space, not bundled in this repository. See [`labs/vt/README.md`](labs/vt/README.md).
