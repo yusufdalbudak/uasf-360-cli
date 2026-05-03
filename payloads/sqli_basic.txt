@@ -1,0 +1,6 @@
+# SQLi validation signatures (non-destructive patterns)
+1' OR '1'='1
+1 OR 1=1--
+admin'--
+1' AND '1'='1
+' OR ''='

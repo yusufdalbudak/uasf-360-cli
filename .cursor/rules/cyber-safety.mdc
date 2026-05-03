@@ -1,0 +1,9 @@
+---
+description: Authorized-use and cyber safety guardrails for UASF
+globs: **/*
+alwaysApply: false
+---
+
+- No destructive payloads, covert data exfiltration, reverse shells, or unbounded internet scanning from this codebase.
+- Non-local targets require explicit acknowledgement flags or `UASF_ACK=1` after authorization.
+- Lab-only tooling (`rate_limit_detection`, aggressive templates) gated by `--lab-mode`.

@@ -1,0 +1,15 @@
+output/*
+!output/.gitkeep
+evidence/*
+!evidence/.gitkeep
+
+# Local secrets / environments
+.env
+.env.*
+.uasf-run-state
+
+# Editor / OS
+.DS_Store
+*.swp
+*.tmp
+.idea/

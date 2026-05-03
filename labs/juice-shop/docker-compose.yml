@@ -1,0 +1,15 @@
+# OWASP Juice Shop — local lab stack for UASF (Docker)
+# https://owasp.org/www-project-juice-shop/
+#
+# Host port: ${JUICE_SHOP_PORT:-3000} → container 3000
+
+name: uasf-juice-shop
+
+services:
+  juice-shop:
+    image: ${JUICE_SHOP_IMAGE:-bkimminich/juice-shop:latest}
+    container_name: uasf-juice-shop
+    ports:
+      - "${JUICE_SHOP_PORT:-3000}:3000"
+    restart: unless-stopped
+    init: true

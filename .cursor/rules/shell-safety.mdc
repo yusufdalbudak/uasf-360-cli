@@ -1,0 +1,8 @@
+---
+description: Strict shell semantics for UASF codebase
+globs: **/*.sh
+alwaysApply: false
+---
+
+- Use `#!/usr/bin/env bash` with `set -Eeuo pipefail` where appropriate.
+- Prefer `jq`/`curl` portability; avoid GNU-only utilities without guarding in `lib/platform.sh`.

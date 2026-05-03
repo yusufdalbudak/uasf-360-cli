@@ -1,0 +1,30 @@
+{
+  "name": "Authentication Flow Abuse",
+  "description": "POST login probes — requires --allow-mutating-methods on run",
+  "steps": [
+    {
+      "method": "POST",
+      "path": "/login",
+      "headers": {
+        "User-Agent": "UASF/1.0",
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      "body": "username=uasf&password=invalid-password-probe",
+      "repeat": 1,
+      "sleep_ms": 200,
+      "expect_http_codes": [200, 401, 403, 429]
+    },
+    {
+      "method": "POST",
+      "path": "/api/auth/token",
+      "headers": {
+        "User-Agent": "UASF/1.0",
+        "Content-Type": "application/json"
+      },
+      "body": "{\"grant_type\":\"password\",\"username\":\"uasf\",\"password\":\"probe\"}",
+      "repeat": 1,
+      "sleep_ms": 200,
+      "expect_http_codes": [200, 401, 403, 429]
+    }
+  ]
+}

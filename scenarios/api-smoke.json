@@ -1,0 +1,41 @@
+{
+  "schema": "uasf.scenario.v2",
+  "name": "API Smoke (v2)",
+  "description": "JSON parameters on GET paths for API validation demos",
+  "category": "api",
+  "risk": "safe",
+  "default_profile": "api",
+  "steps": [
+    {
+      "name": "json-echo-query",
+      "module": "api_json",
+      "method": "GET",
+      "path": "/?uasf_json={{payload}}",
+      "payload_ref": "payloads/api_json.txt",
+      "headers": { "Accept": "application/json" },
+      "body": "",
+      "repeat": 1,
+      "sleep_ms": 100,
+      "expect": {
+        "blocked_codes": [403, 406, 429],
+        "allowed_codes": [200, 201, 202, 204, 404],
+        "challenge_patterns": ["blocked", "captcha"]
+      }
+    },
+    {
+      "name": "graphql-get",
+      "module": "api_graphql",
+      "method": "GET",
+      "path": "/graphql?query={{payload}}",
+      "payload_ref": "payloads/api_graphql.txt",
+      "headers": {},
+      "body": "",
+      "repeat": 1,
+      "sleep_ms": 100,
+      "expect": {
+        "blocked_codes": [403, 401],
+        "allowed_codes": [200, 404]
+      }
+    }
+  ]
+}

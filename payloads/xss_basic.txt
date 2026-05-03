@@ -1,0 +1,4 @@
+# Reflected XSS marker-safe strings (no script execution intent in tooling)
+%3Csvg%2Fonload%3Dalert%281%29%3E
+%3Cimg%20src%3Dx%20onerror%3Dalert%281%29%3E
+%3Cscript%3Ealert%281%29%3C%2Fscript%3E

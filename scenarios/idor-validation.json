@@ -1,0 +1,30 @@
+{
+  "name": "IDOR & Broken Access Control Validation",
+  "description": "Read-only enumeration style checks (authorize only)",
+  "steps": [
+    {
+      "method": "GET",
+      "path": "/api/users/1",
+      "headers": {
+        "User-Agent": "UASF/1.0",
+        "Authorization": "Bearer uasf-test-placeholder"
+      },
+      "body": "",
+      "repeat": 1,
+      "sleep_ms": 50,
+      "expect_http_codes": [200, 401, 403, 404]
+    },
+    {
+      "method": "GET",
+      "path": "/api/users/9999",
+      "headers": {
+        "User-Agent": "UASF/1.0",
+        "Authorization": "Bearer uasf-test-placeholder"
+      },
+      "body": "",
+      "repeat": 1,
+      "sleep_ms": 50,
+      "expect_http_codes": [200, 401, 403, 404]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "uasf.scenario.v2",
+  "name": "AppTrana / WAAP demo",
+  "description": "Demonstration requests for correlating WAAP dashboards with X-UASF-Correlation.",
+  "category": "demo",
+  "risk": "safe",
+  "default_profile": "demo",
+  "steps": [
+    {
+      "name": "baseline-html",
+      "module": "waf_fingerprint",
+      "method": "GET",
+      "path": "/",
+      "headers": {
+        "User-Agent": "UASF360/2.0 (authorized validation)",
+        "X-UASF-Scenario": "apptrana-waap-demo"
+      },
+      "body": "",
+      "repeat": 1,
+      "sleep_ms": 150,
+      "expect": {
+        "blocked_codes": [403, 406, 429],
+        "allowed_codes": [200, 301, 302],
+        "challenge_patterns": ["captcha", "access denied"]
+      }
+    },
+    {
+      "name": "sqli-marker",
+      "module": "sqli",
+      "method": "GET",
+      "path": "/?uasf_q={{payload}}",
+      "payload_ref": "payloads/sqli_basic.txt",
+      "headers": { "Accept": "*/*", "User-Agent": "UASF360/2.0" },
+      "body": "",
+      "repeat": 1,
+      "sleep_ms": 200,
+      "expect": {
+        "blocked_codes": [403, 406, 405],
+        "allowed_codes": [200, 404],
+        "challenge_patterns": []
+      }
+    }
+  ]
+}

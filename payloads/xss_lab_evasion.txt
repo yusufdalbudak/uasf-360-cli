@@ -1,0 +1,8 @@
+# Lab tier: classic parser-edge XSS spellings for rule regression (non-destructive GET probes)
+<isindex action=JaVaScRiPt:confirm(1337)%20 autofocus><img src=k>
+<isindex ACTION=JAVA\u005343RIPT:void(1337)// autofocus>
+<img src/onerror="\u0061lert(document.domain)//">
+<isindex Src=x DATA=TXT OnLoad=Prompt(1337)// />
+<input type=IMAGE src=x autofocus/onfocus=Prompt(1337)>
+<select name="x" autofocus/onfocus=PROMPT&#x28;1337)>x</option>
+<svg/onload=eval(atob(`YWxlcnQoMSk=`))><!-- b64 harmless marker -->

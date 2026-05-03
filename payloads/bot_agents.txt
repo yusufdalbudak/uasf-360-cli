@@ -1,0 +1,4 @@
+sqlmap/1.7
+Nikto/2.5
+python-requests/uasf
+curl/uasf-probe

@@ -1,0 +1,24 @@
+{
+  "name": "Reflected XSS Smoke Test",
+  "description": "Reflected XSS style probes encoded for URL safety",
+  "steps": [
+    {
+      "method": "GET",
+      "path": "/search?q=%3Csvg%2fonload%3Dalert%281%29%3E",
+      "headers": { "User-Agent": "UASF/1.0 (Security Testing)" },
+      "body": "",
+      "repeat": 1,
+      "sleep_ms": 50,
+      "expect_http_codes": [200, 403, 406]
+    },
+    {
+      "method": "GET",
+      "path": "/profile?name=uasf-marker",
+      "headers": { "User-Agent": "UASF/1.0 (Security Testing)" },
+      "body": "",
+      "repeat": 1,
+      "sleep_ms": 50,
+      "expect_http_codes": [200, 403, 404]
+    }
+  ]
+}

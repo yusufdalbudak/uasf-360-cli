@@ -1,0 +1,24 @@
+{
+  "name": "SQL Injection Smoke Test",
+  "description": "Safe SQL injection detection probes (legacy v1 scenario schema)",
+  "steps": [
+    {
+      "method": "GET",
+      "path": "/search?q=%27%20OR%20%271%27%3D%271",
+      "headers": { "User-Agent": "UASF/1.0 (Security Testing)" },
+      "body": "",
+      "repeat": 1,
+      "sleep_ms": 50,
+      "expect_http_codes": [200, 403, 406]
+    },
+    {
+      "method": "GET",
+      "path": "/api/items?id=1%27",
+      "headers": { "User-Agent": "UASF/1.0 (Security Testing)" },
+      "body": "",
+      "repeat": 1,
+      "sleep_ms": 50,
+      "expect_http_codes": [200, 403, 406, 404]
+    }
+  ]
+}

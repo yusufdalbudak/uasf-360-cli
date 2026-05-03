@@ -1,0 +1,11 @@
+---
+description: UASF 360 CLI core conventions
+globs: uasf.sh,**/lib/**/*.sh,**/modules/**/*.sh
+alwaysApply: false
+---
+
+# UASF 360 CLI
+
+- Bash-first; canonical HTTP only in `lib/http.sh`.
+- Every outbound request MUST pass `lib/safety.sh` / `lib/scope.sh` gates.
+- Modules MUST NOT invoke `curl` directly or write evidence except via `lib/evidence.sh`.

@@ -1,0 +1,2 @@
+X-Forwarded-Host: attacker.invalid.local
+X-Original-URL: /admin/local-probe

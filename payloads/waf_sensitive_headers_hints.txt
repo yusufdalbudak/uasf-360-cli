@@ -1,0 +1,8 @@
+# Lab transport module: benign header fingerprints for WAAP anomaly testing (never CRLF; no hop-by-hop override)
+Referer|' OR ''='
+X-Forwarded-For|' OR ''='
+X-Real-Ip|' UNION/**/SELECT/**/1337--
+X-Fowarded-Scheme|HtTpS
+Forwarded|for=_uasf_union_select_1337--
+User-Agent|' OR TRUE--
+X-Amzn-Trace-Id|'%3Cscript%3E1337%3C/script%3E
